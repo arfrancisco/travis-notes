@@ -1,0 +1,22 @@
+$ sudo apt-get update
+# as good practice, you might want to update your packages and repos.
+
+$ sudo apt-get install git-core
+# of course you need git to pull the packages in.
+
+$ \curl -sSL https://get.rvm.io | bash -s stable
+$ /bin/bash --login
+# installs rvm and re-login 
+
+$ rvm install ruby
+# this will install the latest stable ruby version
+
+$ sudo apt-get install postgresql postgresql-contrib
+# install postgresql
+
+$ git clone https://github.com/travis-ci/travis-core.git
+# clone the core lib of travis
+
+$ cd travis-core
+$ bundle install --binstubs --path=vendor/gems
+# install basic dependencies
