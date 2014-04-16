@@ -10,8 +10,8 @@ Travis-CI already runs our tests and checks our coverage. We just a way to inter
 
 
 
+
 ### Code Climate ###
-=====
 Create an and link to your github account. 
 
 Code Climate will automatically scan your github account for repos you want to include. 
@@ -20,7 +20,31 @@ Code Climate will automatically scan your github account for repos you want to i
 
 
 ### Integrating Travis-CI ###
-=====
+Add this gem to your app
+```
+gem "codeclimate-test-reporter", require: nil
+```
+
+Add this to the top of your spec_helper.rb or test_helper.rb
+```
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+```
+
+You'd also need to add a unique code climate token to your '.travis.yml' file. It should look similar to this.
+```
+language: ruby
+cache: bundler
+rvm:
+  - 2.1.0
+addons:
+  code_climate:
+    repo_token: c8......41657d97b
+before_script:
+  - "rake db:create db:migrate test"
+```
 
 
+
+# Demo #
 
